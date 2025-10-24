@@ -1,0 +1,24 @@
+:root {
+    --bg-dark: #0f1117;
+    --bg-sidebar: #151822;
+    --bg-card: #1d2130;
+    --text-light: #d1d5db;
+    --text-white: #fff;
+    --primary: #2563eb;
+    --gray-border: #2b2f3d;
+    --success: #10b981;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+}
