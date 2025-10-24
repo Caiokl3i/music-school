@@ -12,24 +12,6 @@
 
 ---
 
-## 🧩 Estrutura do Projeto
-
-music-school-react/
-│
-├── public/ # Arquivos estáticos
-│
-├── src/
-│ ├── components/ # Componentes reutilizáveis
-│ ├── assets/ # Imagens, ícones e mídias
-│ ├── styles/ # Configurações globais de CSS
-│ ├── App.jsx # Estrutura principal do app
-│ └── main.jsx # Ponto de entrada do projeto
-│
-├── package.json # Dependências e scripts
-└── README.md
-
----
-
 ## 💡 Objetivo do Projeto
 Criar uma **plataforma moderna** que apresente:
 - 🎸 Cursos de música 
