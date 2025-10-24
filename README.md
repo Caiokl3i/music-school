@@ -30,10 +30,10 @@ Criar uma **plataforma moderna** que apresente:
 ## ⚙️ Como Executar o Projeto
 ```bash
 # Clonar o repositório
-git clone https://github.com/seu-usuario/music-school-react.git
+git clone https://github.com/seu-usuario/music-school.git
 
 # Entrar na pasta
-cd music-school-react
+cd music-school
 
 # Instalar as dependências
 npm install
