@@ -1,9 +1,9 @@
-import SideBar from './components/SideBar'
-import Topbar from './components/Topbar'
-import Tabs from './components/Tabs'
-import Table from './components/Table'
+import SideBar from './components/Sidebar/SideBar'
+import Topbar from './components/Topbar/Topbar'
+import Tabs from './components/Tabs/Tabs'
+import Table from './components/Table/Table'
 import styles from "./App.module.css"
-import CardGrid from './components/CardGrid'
+import CardGrid from './components/CardGrid/CardGrid'
 
 function App() {
 
