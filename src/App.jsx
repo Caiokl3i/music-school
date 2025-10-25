@@ -1,24 +1,25 @@
-import SideBar from './components/SideBar'
-import Topbar from './components/Topbar'
-import Tabs from './components/Tabs'
-import Table from './components/Table'
-import './App.css'
+import SideBar from './components/Sidebar/SideBar'
+import Topbar from './components/Topbar/Topbar'
+import Tabs from './components/Tabs/Tabs'
+import Table from './components/Table/Table'
+import styles from "./App.module.css"
+import CardGrid from './components/CardGrid/CardGrid'
 
 function App() {
 
   return (
     <div>
-      <div className='app'>
+      <div className={styles.app}>
       <SideBar />
-      <div className="main">
+      <div className={styles.main}>
         <Topbar />
-        <div className="content">
+        <div className={styles.content}>
           <h2>Violão</h2>
           <Tabs />
-          <div className='card-grid'>
-            
+          <div className={styles.cardGrid}>
+            <CardGrid />
           </div>
-          <div className="table">
+          <div className={styles.table}>
             <h2>Relatório</h2>
             <Table />
           </div>

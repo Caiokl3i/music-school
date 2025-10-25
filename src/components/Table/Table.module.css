@@ -1,0 +1,36 @@
+
+/* COURSE LISTING */
+.table {
+    background-color: var(--bg-card);
+    border-radius: 12px;
+    padding: 20px;
+    width: 100%;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    text-align: center;
+    padding: 10px 8px;
+    font-size: 14px;
+    color: var(--text-light);
+}
+
+th {
+    color: white;
+    border-bottom: 1px solid var(--gray-border);
+    font-weight: 500;
+}
+
+td {
+    border-bottom: 1px solid #1c1f2a;
+}
+
+.points {
+    color: var(--success);
+    font-weight: 500;
+}
