@@ -30,6 +30,22 @@ td {
     border-bottom: 1px solid #1c1f2a;
 }
 
+.empty {
+    text-align: center;
+    color: #9ca3af;
+    padding: 24px;
+}
+
+@media (max-width: 640px) {
+    .table {
+        overflow-x: auto;
+    }
+
+    table {
+        min-width: 480px;
+    }
+}
+
 .points {
     color: var(--success);
     font-weight: 500;

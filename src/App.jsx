@@ -1,32 +1,23 @@
-import SideBar from './components/Sidebar/SideBar'
-import Topbar from './components/Topbar/Topbar'
-import Tabs from './components/Tabs/Tabs'
-import Table from './components/Table/Table'
-import styles from "./App.module.css"
-import CardGrid from './components/CardGrid/CardGrid'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import MainLayout from './layouts/MainLayout'
+import Contato from './pages/Contato'
+import Cursos from './pages/Cursos'
+import Galeria from './pages/Galeria'
+import Home from './pages/Home'
 
 function App() {
-
   return (
-    <div>
-      <div className={styles.app}>
-      <SideBar />
-      <div className={styles.main}>
-        <Topbar />
-        <div className={styles.content}>
-          <h2>Violão</h2>
-          <Tabs />
-          <div className={styles.cardGrid}>
-            <CardGrid />
-          </div>
-          <div className={styles.table}>
-            <h2>Relatório</h2>
-            <Table />
-          </div>
-        </div>
-      </div>
-    </div>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<MainLayout />}>
+          <Route index element={<Home />} />
+          <Route path="cursos" element={<Cursos />} />
+          <Route path="galeria" element={<Galeria />} />
+          <Route path="contato" element={<Contato />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   )
 }
 

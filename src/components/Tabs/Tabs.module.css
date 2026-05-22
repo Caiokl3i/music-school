@@ -1,8 +1,7 @@
-
-/* TABS */
 .tabs {
     display: flex;
-    gap: 24px;
+    flex-wrap: wrap;
+    gap: 16px 24px;
     margin-bottom: 24px;
 }
 
@@ -11,10 +10,18 @@
     cursor: pointer;
     color: #9ca3af;
     transition: 0.2s;
+    background: none;
+    border: none;
+    padding: 0 0 4px;
+    font-size: 15px;
+    font-family: inherit;
+}
+
+.tab:hover {
+    color: var(--text-white);
 }
 
 .tab.active {
     color: white;
     border-bottom: 2px solid var(--primary);
-    padding-bottom: 4px;
 }

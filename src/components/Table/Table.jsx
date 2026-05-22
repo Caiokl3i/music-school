@@ -1,38 +1,49 @@
+import { LEVELS } from '../../data/courses'
+import cardStyles from '../CourseCard/CourseCard.module.css'
 import styles from './Table.module.css'
-import badge from '../CardGrid/CardGrid.module.css'
 
-const Table = () => {
+function Table({ rows }) {
+  if (!rows?.length) {
     return (
-        <div className={styles.table}>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Aula</th>
-                        <th>Nível</th>
-                        <th>Técnica Principal</th>
-                        {/* <th>Nota do aluno</th> */}
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Campo Harmônico Maior</td>
-                        <td><span className={`${badge.badge} ${badge.beginner}`}>Intermediário</span></td>
-                        <td>Formação de acordes</td>
-                    </tr>
-                    <tr>
-                        <td>Dedilhado 1-2-3-4</td>
-                        <td><span className={`${badge.badge} ${badge.intermediate}`}>Iniciante</span></td>
-                        <td>Coordenação motora</td>
-                    </tr>
-                    <tr>
-                        <td>Power Chords</td>
-                        <td><span className={`${badge.badge} ${badge.master}`}>Intermediário</span></td>
-                        <td>Força e clareza</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+      <div className={styles.table}>
+        <p className={styles.empty}>Nenhuma aula para exibir.</p>
+      </div>
     )
+  }
+
+  return (
+    <div className={styles.table}>
+      <table>
+        <thead>
+          <tr>
+            <th>Aula</th>
+            <th>Nível</th>
+            <th>Técnica principal</th>
+            <th>Instrumento</th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((course) => {
+            const level = LEVELS[course.level]
+            return (
+              <tr key={course.id}>
+                <td>{course.title}</td>
+                <td>
+                  <span
+                    className={`${cardStyles.badge} ${cardStyles[level.className]}`}
+                  >
+                    {level.label}
+                  </span>
+                </td>
+                <td>{course.technique}</td>
+                <td>{course.instrument}</td>
+              </tr>
+            )
+          })}
+        </tbody>
+      </table>
+    </div>
+  )
 }
 
 export default Table

@@ -22,3 +22,13 @@ body {
     background-color: var(--bg-dark);
     color: var(--text-light);
 }
+
+#root {
+    min-height: 100vh;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}

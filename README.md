@@ -1,62 +1,109 @@
-# 🎵 Caio Music 
+# Caio Music
 
-> Plataforma web desenvolvida em **React** para apresentação e gestão de aulas de instrumentos musicais.  
-> O projeto foi criado com foco em **design limpo**, **componentização eficiente** e **experiência do usuário fluida**.
+Site vitrine em **React + Vite** para apresentar cursos de música, galeria e contato.
 
----
+## Páginas
 
-## 🚀 Tecnologias Utilizadas
-- **React** — Biblioteca principal para construção da interface  
-- **Vite** — Ferramenta de build rápida e moderna    
-- **Git & GitHub** — Controle de versão e hospedagem do código
+| Rota | Conteúdo |
+|------|----------|
+| `/` | Início — hero, destaques e sobre |
+| `/cursos` | Catálogo com filtros por instrumento e nível |
+| `/galeria` | Galeria de estilos e momentos |
+| `/contato` | Formulário (abre o e-mail) e informações |
 
----
+## Rodar localmente
 
-## 💡 Objetivo do Projeto
-Criar uma **plataforma moderna** que apresente:
-- 🎸 Cursos de música 
-- 🥁 Galeria de instrumentos e estilos    
-- 📱 Interface totalmente **responsiva e intuitiva**
-
----
-
-## 🧠 Conceitos Aplicados
-- Componentização e props no React  
-- Hooks (`useState`, `useEffect`, etc.)   
-- Boas práticas de organização e versionamento
-
----
-
-## ⚙️ Como Executar o Projeto
 ```bash
-# Clonar o repositório
-git clone https://github.com/seu-usuario/music-school.git
-
-# Entrar na pasta
-cd music-school
-
-# Instalar as dependências
 npm install
-
-# Rodar o projeto
 npm run dev
 ```
 
-## 📍 Futuras Implementações
+Abra o endereço que o terminal mostrar (geralmente `http://localhost:5173`).
 
-- Sistema de login e agendamento
+## Build de produção
 
-- Integração com API para cadastro de alunos
+```bash
+npm run build
+npm run preview
+```
 
-- Painel administrativo
+A pasta `dist/` contém os arquivos prontos para publicar.
 
-- Tema escuro
+---
 
-##  Autor
+## Deploy — passo a passo
 
-Caio Victor Santos Valentim
-Desenvolvedor Front-End | Músico | Criador de conteúdo
+### Opção A: Vercel (recomendado, gratuito)
 
-- 📧 caio.victor.santos12@gmail.com
+1. Crie uma conta em [vercel.com](https://vercel.com) e conecte o GitHub.
+2. Envie o projeto para um repositório no GitHub (se ainda não estiver):
+   ```bash
+   git init
+   git add .
+   git commit -m "Site vitrine Caio Music"
+   git branch -M main
+   git remote add origin https://github.com/SEU-USUARIO/music-school.git
+   git push -u origin main
+   ```
+3. No painel da Vercel: **Add New Project** → importe o repositório.
+4. Deixe as configurações padrão:
+   - **Framework Preset:** Vite
+   - **Build Command:** `npm run build`
+   - **Output Directory:** `dist`
+5. Clique em **Deploy**. Em alguns minutos você recebe uma URL (`seu-projeto.vercel.app`).
+6. O arquivo `vercel.json` já redireciona rotas como `/cursos` para o React Router funcionar.
 
-- 💼 [Acesse meu LinkedIn](https://www.linkedin.com/in/caio-victor-santos-valentim/)
+### Opção B: Netlify (gratuito)
+
+1. Conta em [netlify.com](https://netlify.com) e projeto no GitHub (mesmos passos 2 do item acima).
+2. **Add new site** → **Import an existing project** → escolha o repositório.
+3. Configuração:
+   - **Build command:** `npm run build`
+   - **Publish directory:** `dist`
+4. **Deploy site**. O arquivo `public/_redirects` cuida das rotas da SPA.
+
+**Deploy manual (arrastar pasta):**
+
+```bash
+npm run build
+```
+
+No Netlify: **Sites** → **Deploy manually** → arraste a pasta `dist`.
+
+### Opção C: GitHub Pages
+
+1. Instale a dependência de deploy (uma vez):
+   ```bash
+   npm install -D gh-pages
+   ```
+2. No `package.json`, adicione `"homepage": "https://SEU-USUARIO.github.io/NOME-DO-REPO"` e scripts:
+   ```json
+   "predeploy": "npm run build",
+   "deploy": "gh-pages -d dist"
+   ```
+3. No `vite.config.js`, defina `base: '/NOME-DO-REPO/'`.
+4. Execute `npm run deploy` e ative **GitHub Pages** nas configurações do repositório (branch `gh-pages`).
+
+---
+
+## Personalizar conteúdo
+
+| Arquivo | O que editar |
+|---------|----------------|
+| `src/data/courses.js` | Cursos, níveis, textos e datas |
+| `src/data/gallery.js` | Itens da galeria |
+| `src/data/site.js` | E-mail, LinkedIn, textos gerais |
+| `src/assets/` | Logo e fotos opcionais (use `image: null` nos dados ou importe `.jpg` no curso) |
+
+## Tecnologias
+
+- React 19
+- React Router
+- Vite
+- CSS Modules
+
+## Autor
+
+**Caio Victor Santos Valentim**  
+📧 caio.victor.santos12@gmail.com  
+💼 [LinkedIn](https://www.linkedin.com/in/caio-victor-santos-valentim/)
